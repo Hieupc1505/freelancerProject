@@ -1,0 +1,76 @@
+@font-face {
+    font-family: "Quentin";
+    src: url("/Quentin.woff2") format("woff2"),
+        url("/Quentin.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.fadeUpOut {
+    --fade-translate-y: -40px;
+    --fade-scale: 1;
+    animation: fade-out 0.3s reverse;
+}
+
+.fadeUp {
+    --fade-translate-y: 0px;
+    --fade-scale: 0.4;
+    animation: fade-up 0.8s;
+    transform-origin: bottom;
+}
+
+.fadeBox {
+    --fade-translate-y: 80px;
+    --fade-scale: 1;
+    animation: fade-up 1s;
+}
+.fadeBtn {
+    --fade-translate-y: 120px;
+    --fade-scale: 1;
+    animation: fade-up 1s;
+}
+
+.fadeCharactor-even {
+    --fade-translate-y: 40px;
+    --fade-scale: 1;
+    animation: fade-up 1s;
+}
+.fadeCharactor-odd {
+    --fade-translate-y: -40px;
+    --fade-scale: 1;
+    animation: fade-up 1s;
+}
+.fadeCharactor-title {
+    --fade-translate-y: -100px;
+    --fade-scale: 1;
+    animation: fade-up 1.8s;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(var(--fade-translate-y, 0))
+            scale(var(--fade-scale, 1));
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--fade-translate-y, 0))
+            scale(var(--fade-scale, 1));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
